@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+    include:
+      - credentials
+  main:
+    banner-mode: "off"
+camel:
+  dataformat:
+    csv:
+      enabled: true
+      delimiter: ','
+      skip-header-record: true
+  springboot:
+    main-run-controller: true
