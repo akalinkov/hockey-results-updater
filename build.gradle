@@ -21,27 +21,30 @@ repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'org.apache.camel:camel-bom:2.24.2'
+    }
+}
+
 ext {
     log4jVersion = '2.12.0'
-    camelVersion = '2.24.2'
     junitVersion = '4.12'
-    mockitoVersion = '3.1.0'
 }
 
 dependencies {
-    testImplementation group: 'junit', name: 'junit', version: junitVersion
-    testImplementation group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
-
-    implementation group: 'org.apache.camel', name: 'camel-spring-boot-starter', version: camelVersion
-    implementation group: 'org.apache.camel', name: 'camel-csv-starter', version: camelVersion
-    implementation group: 'org.apache.camel', name: 'camel-bindy-starter', version: camelVersion
-    implementation group: 'org.apache.camel', name: 'camel-http-starter', version: camelVersion
+    implementation group: 'org.apache.camel', name: 'camel-spring-boot-starter'
+    implementation group: 'org.apache.camel', name: 'camel-csv-starter'
+    implementation group: 'org.apache.camel', name: 'camel-bindy-starter'
+    implementation group: 'org.apache.camel', name: 'camel-gson'
     implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4jVersion
 
     compileOnly group: 'org.projectlombok', name: 'lombok'
 
     annotationProcessor group: 'org.springframework.boot', name: 'spring-boot-configuration-processor'
     annotationProcessor group: 'org.projectlombok', name: 'lombok'
+
+    testImplementation group: 'junit', name: 'junit', version: junitVersion
 }
 
 configurations {

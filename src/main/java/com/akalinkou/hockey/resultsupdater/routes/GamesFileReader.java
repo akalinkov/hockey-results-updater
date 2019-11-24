@@ -1,6 +1,7 @@
 package com.akalinkou.hockey.resultsupdater.routes;
 
-import com.akalinkou.hockey.resultsupdater.models.Game;
+import com.akalinkou.hockey.resultsupdater.models.PahlGame;
+import com.akalinkou.hockey.resultsupdater.processors.PahlGameProcessor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.dataformat.bindy.csv.BindyCsvDataFormat;
@@ -12,9 +13,12 @@ public class GamesFileReader extends RouteBuilder {
 
   @Override
   public void configure() {
-    from("file://target/input?move=.done")
-        .unmarshal(new BindyCsvDataFormat(Game.class))
+    from("file://input?move=.done")
+        .routeId("CSV File Reader")
+        .unmarshal(new BindyCsvDataFormat(PahlGame.class))
         .split(body())
-        .log("Line: ${body}");
+        .process(PahlGameProcessor::toWwwForm)
+        .log("${body}")
+        .end();
   }
 }

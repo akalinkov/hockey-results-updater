@@ -12,5 +12,5 @@ public class Application {
     log.debug("Starting application");
     SpringApplication.run(Application.class, args);
   }
-
 }
+

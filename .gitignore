@@ -28,6 +28,7 @@ hs_err_pid*
 .DS_Store
 .gradle/
 .idea/
+input/
 
 # Files with credentials that are not supposed to be pushed to git.
 application-credentials.yml

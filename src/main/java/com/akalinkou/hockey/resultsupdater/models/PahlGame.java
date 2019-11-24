@@ -9,8 +9,8 @@ import org.apache.camel.dataformat.bindy.annotation.DataField;
 @Getter
 @Setter
 @ToString
-@CsvRecord(separator = ",")
-public class Game {
+@CsvRecord(separator = ",", skipFirstLine = true)
+public class PahlGame {
 
   @DataField(pos = 1, required = true)
   private String division;

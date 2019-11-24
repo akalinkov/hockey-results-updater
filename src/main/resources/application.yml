@@ -13,3 +13,8 @@ camel:
       skip-header-record: true
   springboot:
     main-run-controller: true
+logging:
+  level:
+    org.springframework.boot: ERROR
+    org.apache.camel: ERROR
+    com.akalinkou.hockey.resultsupdater: DEBUG
