@@ -36,7 +36,7 @@ dependencies {
     implementation group: 'org.apache.camel', name: 'camel-spring-boot-starter'
     implementation group: 'org.apache.camel', name: 'camel-csv-starter'
     implementation group: 'org.apache.camel', name: 'camel-bindy-starter'
-    implementation group: 'org.apache.camel', name: 'camel-gson'
+    implementation group: 'org.apache.camel', name: 'camel-http4-starter'
     implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4jVersion
 
     compileOnly group: 'org.projectlombok', name: 'lombok'

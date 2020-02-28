@@ -17,4 +17,4 @@ logging:
   level:
     org.springframework.boot: ERROR
     org.apache.camel: ERROR
-    com.akalinkou.hockey.resultsupdater: DEBUG
+    com.akalinkou.hockey.resultsupdater: INFO
